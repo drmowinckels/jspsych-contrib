@@ -7,9 +7,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "url";
 
-import { dest, series, src } from "gulp";
-import replace from "gulp-replace";
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const packagesDir = path.join(__dirname, "packages");
@@ -28,7 +25,41 @@ function getPackageInfo(packageDir) {
   };
 }
 
+const categories = [
+  { key: "tasks", title: "Tasks", label: "Task", blurb: "Complete experimental paradigms." },
+  {
+    key: "responses",
+    title: "Response and stimulus plugins",
+    label: "Plugin",
+    blurb: "General-purpose building blocks for presenting stimuli and collecting responses.",
+  },
+  { key: "surveys", title: "Surveys and scales", label: "Plugin", blurb: "Questionnaire items and rating scales." },
+  {
+    key: "utilities",
+    title: "Utilities, data and infrastructure",
+    label: "Plugin",
+    blurb: "Plugins for data storage, redirects, device handling and other infrastructure.",
+  },
+];
+
+function renderRow(info, prefix) {
+  const packageName = info.name.replace(/^\@jspsych-contrib\//g, "");
+  const link = `https://github.com/jspsych/jspsych-contrib/blob/main/packages/${packageName}/README.md`;
+  const shortName = packageName.replace(prefix, "");
+  const authorRender = info.authorUrl ? `[${info.author}](${info.authorUrl})` : info.author;
+  return `[${shortName}](${link}) | ${authorRender} | ${
+    info.description ? info.description : `_Description for ${shortName}._`
+  } \n`;
+}
+
+function renderTable(heading, label, blurb, rows) {
+  return `${heading}\n\n${blurb}\n\n${label} | Contributor | Description\n----------- | ----------- | -----------\n${rows}\n`;
+}
+
 async function updateRootReadme() {
+  const packageCategories = JSON.parse(
+    fs.readFileSync(path.join(__dirname, "package-categories.json"), "utf-8")
+  );
   const packageInfos = fs
     .readdirSync(packagesDir)
     .map((dir) => path.join(packagesDir, dir))
@@ -36,58 +67,36 @@ async function updateRootReadme() {
     .map(getPackageInfo)
     .filter((info) => info !== null);
 
-  const pluginListHead = `### Plugins\n
-Plugin | Contributor | Description
------------ | ----------- | -----------\n`;
-
-  const extensionListHead = `\n### Extensions\n
-Extension | Contributor | Description
------------ | ----------- | -----------\n`;
-
-  const guidelinesHead = "\n## Guidelines for contributions";
-
-  let pluginList = "";
+  const grouped = Object.fromEntries(categories.map((c) => [c.key, ""]));
   let extensionList = "";
 
-  packageInfos.map((info) => {
+  packageInfos.forEach((info) => {
     const packageName = info.name.replace(/^\@jspsych-contrib\//g, "");
-    const packageReadmeLink = `https://github.com/jspsych/jspsych-contrib/blob/main/packages/${packageName}/README.md`;
-
-    const authorRender = info.authorUrl != "" ? `[${info.author}](${info.authorUrl})` : info.author;
-    if (info.name.match(/^\@jspsych-contrib\/plugin-/g)) {
-      const pluginName = packageName.replace(/^plugin-/g, "");
-      pluginList = pluginList.concat(
-        `[${pluginName}](${packageReadmeLink}) | ${authorRender} | ${
-          info.description ? info.description : `_Description for ${pluginName}._`
-        } \n`
-      );
+    if (packageName.startsWith("extension-")) {
+      extensionList += renderRow(info, /^extension-/);
     } else {
-      const extensionName = packageName.replace(/^extension-/g, "");
-      extensionList = extensionList.concat(
-        `[${extensionName}](${packageReadmeLink}) | ${authorRender} | ${
-          info.description ? info.description : `_Description for ${extensionName}._`
-        } \n`
-      );
+      const key = packageCategories[packageName];
+      if (!(key in grouped)) {
+        throw new Error(
+          `${packageName} has no valid category in package-categories.json (use one of: ${Object.keys(grouped).join(", ")})`
+        );
+      }
+      grouped[key] += renderRow(info, /^plugin-/);
     }
   });
 
-  const pluginTable = [pluginListHead, pluginList, extensionListHead];
-  const extensionTable = [extensionListHead, extensionList, guidelinesHead];
+  const sections = [
+    "### Plugins\n\nPlugins are grouped by purpose.\n\n",
+    ...categories.map((c) => renderTable(`#### ${c.title}`, c.label, c.blurb, grouped[c.key])),
+    renderTable("### Extensions", "Extension", "Extensions add functionality to jsPsych experiments.", extensionList),
+  ];
 
-  function generatePluginTable() {
-    return src(`${__dirname}/README.md`)
-      .pipe(replace(/### Plugins[\s\S]*?### Extensions/g, pluginTable.join("")))
-      .pipe(dest(__dirname));
-  }
-
-  function generateExtensionTable() {
-    return src(`${__dirname}/README.md`)
-      .pipe(
-        replace(/### Extensions[\s\S]*?## Guidelines for contributions/g, extensionTable.join(""))
-      )
-      .pipe(dest(__dirname));
-  }
-  series(generatePluginTable, generateExtensionTable)();
+  const readme = fs.readFileSync(readmePath, "utf-8");
+  const updated = readme.replace(
+    /### Plugins[\s\S]*?\n## Guidelines for contributions/,
+    () => sections.join("") + "\n## Guidelines for contributions"
+  );
+  fs.writeFileSync(readmePath, updated);
 }
 
 export default updateRootReadme;

@@ -20,24 +20,46 @@ The `/packages` directory also contains four template sub-folders that can be us
 
 ### Plugins
 
+Plugins are grouped by purpose.
+
+#### Tasks
+
+Complete experimental paradigms.
+
+Task | Contributor | Description
+----------- | ----------- | -----------
+[bart](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-bart/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | The balloon analogue risk task (BART) measures risk-taking behavior through a simple balloon-pumping simulation with risk of explosion. 
+[columbia-card-task](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-columbia-card-task/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | The Columbia Card Task measures risk preferences through choices in a card game. 
+[copying-task](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-copying-task/README.md) | [Andre Sahakian](https://github.com/Andre3582) | A plugin for running a copying task: a model grid on the left has to be recreated in the middle grid, using items from the right grid. 
+[corsi-blocks](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-corsi-blocks/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | This plugin displays a configurable Corsi blocks task and records a series of click responses. 
+[flanker](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-flanker/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A jsPsych plugin for the Eriksen Flanker Task. Displays a configurable flanker array with precise SOA timing and supports arrows, letters, numbers, or custom stimuli. Includes keyboard and mobile-friendly button response modes. 
+[free-recall-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-free-recall-response/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A plugin for collecting free recall responses one word at a time with mobile-friendly UI 
+[libet-intentional-binding](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-libet-intentional-binding/README.md) | [Isaac Kinley](https://github.com/kinleyid) | This plugin measures intentional binding using a Libet clock, and allows the participant to estimate the timing of events by adjusting the clock hand themselves. 
+[pursuit-rotor](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-pursuit-rotor/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | Motor tracking task requiring continuous tracking of a moving target with mouse or touch input 
+[rdk](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-rdk/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | This plugin displays a Random Dot Kinematogram (RDK) and allows the subject to report the primary direction of motion by pressing a key on the keyboard. 
+[rok](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-rok/README.md) | [Younes Strittmatter](https://github.com/younesStrittmatter) | This plugin displays a Random Object Kinematogram (ROK) and allows the participant to report the primary direction of motion or the primary orientation by pressing a key on the keyboard. 
+[self-paced-reading](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-self-paced-reading/README.md) | [igmmgi](https://github.com/igmmgi) | Self-paced reading tasks with different display options. 
+[spatial-nback](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-spatial-nback/README.md) | [A. Hunter Farhat](https://github.com/farhat60) | A jsPsych plugin for presenting a spatial grid stimulus, designed for spatial n-back tasks. The plugin displays a customizable grid, highlights a cell as the stimulus, and collects participant responses with optional feedback and instructions. 
+[spr](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-spr/README.md) | [jade](https://github.com/jadeddelta) | Self-paced reading trials using the DOM. 
+[stop-signal](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-stop-signal/README.md) | [Becca Bogstad](https://github.com/beccaTurtle) | This plugin supports showing an animation and collecting user response with buttons 
+[tangram-game](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-tangram-game/README.md) | [Aline Normoyle](https://github.com/alinen) | A child-friendly tangram game with click-and-click interface and potential for custom puzzles 
+[tower-of-london](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-tower-of-london/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A jsPsych plugin for Tower of London/Hanoi style puzzle tasks. Participants move colored balls between pegs to match a goal configuration. 
+[trail-making](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-trail-making/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A jsPsych plugin for the Trail Making Test (TMT), where participants connect circles in sequence. Supports Part A (numbers only) and Part B (alternating numbers and letters). 
+[visual-search-click-target](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-visual-search-click-target/README.md) | Josh de Leeuw | Visual search trial with click response 
+[vsl-animate-occlusion](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-vsl-animate-occlusion/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | The VSL (visual statistical learning) animate occlusion plugin displays an animated sequence of shapes that disappear behind an occluding rectangle while they change from one shape to another. 
+[vsl-grid-scene](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-vsl-grid-scene/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | The VSL (visual statistical learning) grid scene plugin displays images arranged in a grid. 
+
+#### Response and stimulus plugins
+
+General-purpose building blocks for presenting stimuli and collecting responses.
+
 Plugin | Contributor | Description
 ----------- | ----------- | -----------
 [audio-multi-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-audio-multi-response/README.md) | [Adam Richie-Halford](https://github.com/richford) | This plugin collects responses to an audio file using both button clicks and key presses. 
 [audio-swipe-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-audio-swipe-response/README.md) | [Adam Richie-Halford](https://github.com/richford) | This plugin collects responses to an audio file using swipe gestures and keyboard responses. 
 [barchart-button-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-barchart-button-response/README.md) | [Courtney B. Hilton](https://github.com/courtney-bryce-hilton) | This plugin shows a barchart of values with an optional parameter to highlight a particular bar of interest (such as one corresponding to a participant's score) 
-[bart](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-bart/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | The balloon analogue risk task (BART) measures risk-taking behavior through a simple balloon-pumping simulation with risk of explosion. 
-[capture-url-params](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-capture-url-params/README.md) | [Courtney B. Hilton](https://github.com/courtney-bryce-hilton) | Captures URL parameters and saves them in the data. 
-[chiasm-calibrate](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-chiasm-calibrate/README.md) | [Chiasm](https://chiasm.eu) | Runs the participant-facing Chiasm eye-tracking calibration ceremony in a single timeline trial. 
-[chiasm-setup](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-chiasm-setup/README.md) | [Chiasm](https://chiasm.eu) | Initializes the Chiasm eye tracker and starts a backend recording session in a single timeline trial. 
 [circle-click-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-circle-click-response/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A plugin that displays a central HTML stimulus surrounded by clickable options arranged in a circle 
-[columbia-card-task](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-columbia-card-task/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | The Columbia Card Task measures risk preferences through choices in a card game. 
-[copying-task](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-copying-task/README.md) | [Andre Sahakian](https://github.com/Andre3582) | A plugin for running a copying task: a model grid on the left has to be recreated in the middle grid, using items from the right grid. 
-[corsi-blocks](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-corsi-blocks/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | This plugin displays a configurable Corsi blocks task and records a series of click responses. 
 [densitychart-button-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-densitychart-button-response/README.md) | [Courtney B. Hilton](https://github.com/courtney-bryce-hilton) | Displays a densitychart of results to show the participant on a trial 
-[device-orientation](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-device-orientation/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | Require mobile devices to be in a specific orientation (landscape or portrait) before continuing 
-[flanker](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-flanker/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A jsPsych plugin for the Eriksen Flanker Task. Displays a configurable flanker array with precise SOA timing and supports arrows, letters, numbers, or custom stimuli. Includes keyboard and mobile-friendly button response modes. 
-[free-recall-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-free-recall-response/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A plugin for collecting free recall responses one word at a time with mobile-friendly UI 
-[gamepad](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-gamepad/README.md) | [Shaobin Jiang](https://github.com/Shaobin-Jiang) | This plugin allows one to use gamepads in a jsPsych experiment. 
 [histogram-button-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-histogram-button-response/README.md) | [Courtney B. Hilton](https://github.com/courtney-bryce-hilton) | Displays a histogram of results to show the participant on a trial 
 [html-choice](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-html-choice/README.md) | [Younes Strittmatter](https://github.com/younesStrittmatter) | This plugin displays clickable html elements that can be used to present a choice. 
 [html-keyboard-response-raf](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-html-keyboard-response-raf/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | This plugin uses the same functionality as the html-keyboard-response plugin, but uses requestAnimationFrame internally for timing 
@@ -50,37 +72,43 @@ Plugin | Contributor | Description
 [image-hotspots](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-image-hotspots/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A plugin for displaying an image with clickable regions 
 [image-multi-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-image-multi-response/README.md) | [Adam Richie-Halford](https://github.com/richford) | This plugin collects responses to an image stimulus using both button clicks and key presses. 
 [image-swipe-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-image-swipe-response/README.md) | [Adam Richie-Halford](https://github.com/richford) | This plugin collects responses to an image stimulus using swipe gestures and keyboard responses. 
-[ios](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-ios/README.md) | [Isaac Kinley](https://github.com/kinleyid) | This plugin implements a continuous version of the Inclusion of Other in the Self (IOS) Scale ([Aron et al., 1992](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.63.4.596)). 
-[libet-intentional-binding](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-libet-intentional-binding/README.md) | [Isaac Kinley](https://github.com/kinleyid) | This plugin measures intentional binding using a Libet clock, and allows the participant to estimate the timing of events by adjusting the clock hand themselves. 
-[nextcloud-filedrop](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-nextcloud-filedrop/README.md) | [C. Martin Grewe](https://github.com/mgrewe) | This plugin provides permanent storage of data collected during an experiment using a nextcloud instance. 
 [numpad](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-numpad/README.md) | [jade](https://github.com/jadeddelta) | an interactable and responsive numpad supporting both touch and keyboard interaction for numerical input. 
-[pipe](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-pipe/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | jsPsych plugin to faciliate communication with [DataPipe](https://pipe.jspsych.org) 
-[pursuit-rotor](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-pursuit-rotor/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | Motor tracking task requiring continuous tracking of a moving target with mouse or touch input 
-[rdk](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-rdk/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | This plugin displays a Random Dot Kinematogram (RDK) and allows the subject to report the primary direction of motion by pressing a key on the keyboard. 
-[redirect-to-url](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-redirect-to-url/README.md) | [Courtney B. Hilton](https://github.com/courtney-bryce-hilton) | Facilitates redirecting to a URL at the end of a study. For example, this can facilitate running Prolific or other paid recruitment platforms. 
-[rok](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-rok/README.md) | [Younes Strittmatter](https://github.com/younesStrittmatter) | This plugin displays a Random Object Kinematogram (ROK) and allows the participant to report the primary direction of motion or the primary orientation by pressing a key on the keyboard. 
-[self-paced-reading](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-self-paced-reading/README.md) | [igmmgi](https://github.com/igmmgi) | Self-paced reading tasks with different display options. 
-[slide-to-continue](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-slide-to-continue/README.md) | [Vishnu Lakshman](https://github.com/lakshmanvishnu) | The plugin-slider is a jsPsych plugin that creates an interactive slider interface similar to the 'slide to unlock' functionality found on mobile devices. Users must drag a slider handle to complete the trial, making it useful for consent screens, engagement checks, or transition screens in psychological experiments. 
-[spatial-nback](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-spatial-nback/README.md) | [A. Hunter Farhat](https://github.com/farhat60) | A jsPsych plugin for presenting a spatial grid stimulus, designed for spatial n-back tasks. The plugin displays a customizable grid, highlights a cell as the stimulus, and collects participant responses with optional feedback and instructions. 
-[spr](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-spr/README.md) | [jade](https://github.com/jadeddelta) | Self-paced reading trials using the DOM. 
-[stop-signal](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-stop-signal/README.md) | [Becca Bogstad](https://github.com/beccaTurtle) | This plugin supports showing an animation and collecting user response with buttons 
+[video-hotspots](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-video-hotspots/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A plugin for displaying a video that freezes on the final frame with clickable hotspots 
+[video-several-keyboard-responses](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-video-several-keyboard-responses/README.md) | [Maria Emine Nylund](https://github.com/marianylund) | jsPsych plugin for playing a video file and getting several keyboard responses 
+[video-text-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-video-text-response/README.md) | [Gabriel Fajardo, Xinyi Guan](https://fajardgb.github.io/) | Initial release: Plays a video and collects free-text responses, recording the video time of each response. 
+
+#### Surveys and scales
+
+Questionnaire items and rating scales.
+
+Plugin | Contributor | Description
+----------- | ----------- | -----------
+[ios](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-ios/README.md) | [Isaac Kinley](https://github.com/kinleyid) | This plugin implements a continuous version of the Inclusion of Other in the Self (IOS) Scale ([Aron et al., 1992](https://psycnet.apa.org/doiLanding?doi=10.1037%2F0022-3514.63.4.596)). 
 [survey-grid](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-survey-grid/README.md) | [Sam Zorowitz](https://github.com/szorowi1) | jsPsych plugin for gathering responses to questions on a likert scale in a grid format. 
 [survey-likert-sd](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-survey-likert-sd/README.md) | [Daiichiro Kuroki](https://github.com/kurokida) | Extention of the survey-likert plugin to enable the use of the SD method. 
 [survey-number](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-survey-number/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | This plugin displays a survey question and collects a numeric response. 
 [survey-slider](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-survey-slider/README.md) | [Dominique Makowski](https://github.com/DominiqueMakowski) | Add several analogue scales on the same page for use in questionnaires. 
 [survey-vas](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-survey-vas/README.md) | [Isaac Kinley](https://github.com/kinleyid) | This plugin displays a series of questions with point-and-click visual analogue scales. 
-[tangram-game](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-tangram-game/README.md) | [Aline Normoyle](https://github.com/alinen) | A child-friendly tangram game with click-and-click interface and potential for custom puzzles 
-[tower-of-london](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-tower-of-london/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A jsPsych plugin for Tower of London/Hanoi style puzzle tasks. Participants move colored balls between pegs to match a goal configuration. 
-[trail-making](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-trail-making/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A jsPsych plugin for the Trail Making Test (TMT), where participants connect circles in sequence. Supports Part A (numbers only) and Part B (alternating numbers and letters). 
-[video-hotspots](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-video-hotspots/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | A plugin for displaying a video that freezes on the final frame with clickable hotspots 
-[video-several-keyboard-responses](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-video-several-keyboard-responses/README.md) | [Maria Emine Nylund](https://github.com/marianylund) | jsPsych plugin for playing a video file and getting several keyboard responses 
-[video-text-response](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-video-text-response/README.md) | [Gabriel Fajardo, Xinyi Guan](https://fajardgb.github.io/) | Initial release: Plays a video and collects free-text responses, recording the video time of each response. 
-[visual-search-click-target](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-visual-search-click-target/README.md) | Josh de Leeuw | Visual search trial with click response 
-[vsl-animate-occlusion](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-vsl-animate-occlusion/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | The VSL (visual statistical learning) animate occlusion plugin displays an animated sequence of shapes that disappear behind an occluding rectangle while they change from one shape to another. 
-[vsl-grid-scene](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-vsl-grid-scene/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | The VSL (visual statistical learning) grid scene plugin displays images arranged in a grid. 
 
+#### Utilities, data and infrastructure
+
+Plugins for data storage, redirects, device handling and other infrastructure.
+
+Plugin | Contributor | Description
+----------- | ----------- | -----------
+[capture-url-params](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-capture-url-params/README.md) | [Courtney B. Hilton](https://github.com/courtney-bryce-hilton) | Captures URL parameters and saves them in the data. 
+[chiasm-calibrate](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-chiasm-calibrate/README.md) | [Chiasm](https://chiasm.eu) | Runs the participant-facing Chiasm eye-tracking calibration ceremony in a single timeline trial. 
+[chiasm-setup](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-chiasm-setup/README.md) | [Chiasm](https://chiasm.eu) | Initializes the Chiasm eye tracker and starts a backend recording session in a single timeline trial. 
+[device-orientation](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-device-orientation/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | Require mobile devices to be in a specific orientation (landscape or portrait) before continuing 
+[gamepad](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-gamepad/README.md) | [Shaobin Jiang](https://github.com/Shaobin-Jiang) | This plugin allows one to use gamepads in a jsPsych experiment. 
+[nextcloud-filedrop](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-nextcloud-filedrop/README.md) | [C. Martin Grewe](https://github.com/mgrewe) | This plugin provides permanent storage of data collected during an experiment using a nextcloud instance. 
+[pipe](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-pipe/README.md) | [Josh de Leeuw](https://github.com/jodeleeuw) | jsPsych plugin to faciliate communication with [DataPipe](https://pipe.jspsych.org) 
+[redirect-to-url](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-redirect-to-url/README.md) | [Courtney B. Hilton](https://github.com/courtney-bryce-hilton) | Facilitates redirecting to a URL at the end of a study. For example, this can facilitate running Prolific or other paid recruitment platforms. 
+[slide-to-continue](https://github.com/jspsych/jspsych-contrib/blob/main/packages/plugin-slide-to-continue/README.md) | [Vishnu Lakshman](https://github.com/lakshmanvishnu) | The plugin-slider is a jsPsych plugin that creates an interactive slider interface similar to the 'slide to unlock' functionality found on mobile devices. Users must drag a slider handle to complete the trial, making it useful for consent screens, engagement checks, or transition screens in psychological experiments. 
 
 ### Extensions
+
+Extensions add functionality to jsPsych experiments.
 
 Extension | Contributor | Description
 ----------- | ----------- | -----------
@@ -90,6 +118,7 @@ Extension | Contributor | Description
 [mediapipe-face-mesh](https://github.com/jspsych/jspsych-contrib/blob/main/packages/extension-mediapipe-face-mesh/README.md) | [C. Martin Grewe](https://github.com/mgrewe) | This extension provides online tracking of facial posture during trials using the [MediaPipe Face Mesh](https://google.github.io/mediapipe/solutions/face_mesh) library. 
 [touchscreen-buttons](https://github.com/jspsych/jspsych-contrib/blob/main/packages/extension-touchscreen-buttons/README.md) | [Younes Strittmatter](https://github.com/younesStrittmatter) | This extension displays touch buttons that allow the participant to respond to stimuli via a touchscreen on mobile devices. 
 
+
 ## Guidelines for contributions
 ### Contribution requirements
 Contributions to this repository must:
@@ -98,6 +127,7 @@ Contributions to this repository must:
 * Include the complete code for the plugin or extension.
 * Include a `README.md` file following our [template](https://github.com/jspsych/jspsych-dev/blob/main/packages/new-plugin/templates/plugin-template-ts/README.md) (identical for plugins and extensions).
 * Include a `package.json` file.
+* For plugins, add an entry for the package in `package-categories.json` (`tasks`, `responses`, `surveys` or `utilities`). The root README lists are generated from this file.
 
 Optionally, contributions are encouraged to include:
 
